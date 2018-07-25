@@ -1,0 +1,10 @@
+// Native: ưu tiên style của None --> p: blueviolet; h3: 1.25rem
+// Native: nếu ko có None thì nhận style của chính nó, không nhận style global hay parent element
+
+p {
+  color: blue;
+}
+
+h3 {
+  font-size: 1.25rem;
+}

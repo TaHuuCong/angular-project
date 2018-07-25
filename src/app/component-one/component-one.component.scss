@@ -1,0 +1,12 @@
+// Emulated: ưu tiên style của bản thân nó trước tiên --> p: green
+// Emulated: nếu ko có style riêng thì ưu tiên nhận style của None  --> h3: 1.5rem
+//           nếu ko có None thì nhận đến style global
+//           không nhận style của App Component (component cha)
+
+p {
+  color: green;
+}
+
+// h3 {
+//   font-size: 1.2rem;
+// }
