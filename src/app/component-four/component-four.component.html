@@ -2,6 +2,20 @@
   component-four là con của component-one!
 </h3>
 
-<p [ngStyle]="{'font-size.px': (soThuNhat>5?25:20)}">
-  test @Input
+<h4 [ngStyle]="{'font-size.px': (soThuNhat>5?25:20)}">
+  @Input() truyền dữ liệu từ component con ra component cha
+</h4>
+
+<p class="chuoi-mot">
+  Chuỗi thứ nhất là: {{chuoiThuNhat}}
 </p>
+
+<div class="input-text-one">
+  Nhập gì đó vào đây đi:
+  <input type="text" (change)="emitEnterAnything()" [(ngModel)]='value' />
+  <br> Show contact info?:
+  <input type="checkbox" [checked]="checked" (change)="emitIsShow($event)" />
+  <br>
+  <h3>Foods is eating</h3>
+  <p *ngFor="let food of foods"> {{food}}</p>
+</div>
