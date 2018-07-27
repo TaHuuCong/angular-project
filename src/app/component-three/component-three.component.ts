@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { MyServiceService } from '../service/my-service.service';
 
 @Component({
   selector: 'app-component-three',
@@ -8,9 +9,16 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class ComponentThreeComponent implements OnInit {
 
-  constructor() { }
+  todayDate;
+  componentproperty;
+
+  constructor(
+    private myService: MyServiceService,
+  ) { }
 
   ngOnInit() {
+    this.todayDate = this.myService.showTodayDate();
+    this.componentproperty = this.myService.serviceproperty;
   }
 
 }

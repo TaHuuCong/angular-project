@@ -8,6 +8,8 @@ import { ComponentTwoComponent } from './component-two/component-two.component';
 import { ComponentThreeComponent } from './component-three/component-three.component';
 import { ComponentFourComponent } from './component-four/component-four.component';
 
+import { MyServiceService } from './service/my-service.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,7 @@ import { ComponentFourComponent } from './component-four/component-four.componen
     BrowserModule,
     FormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent, ComponentOneComponent]   // nơi app bắt đầu
+  providers: [MyServiceService],
+  bootstrap: [AppComponent, ComponentOneComponent]   // nơi app bắt đầu --> 2 component này cùng cấp
 })
 export class AppModule { }

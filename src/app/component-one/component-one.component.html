@@ -8,14 +8,8 @@
 
 <div class="comp-four">
   <!-- phải sử dụng định danh của biến được Input ở đây -->
-  <app-component-four
-    [isLargerThanFive]='isLargerThanFive'
-    [st1]='soThuNhat'
-    [chuoi-mot]='chuoiThuNhat'
-    (enterAnything) = 'getTextFromInput($event)'
-    (isShow) = 'getStatusOfCheck($event)'
-    #son
-  ></app-component-four>
+  <app-component-four [isLargerThanFive]='isLargerThanFive' [st1]='soThuNhat' [chuoi-mot]='chuoiThuNhat' (enterAnything)='getTextFromInput($event)'
+    (isShow)='getStatusOfCheck($event)' #eatRice></app-component-four>
 
   <p>Đây là cái bạn vừa nhập vào: {{textFromInput}}</p>
 
@@ -28,7 +22,9 @@
     </ul>
   </div>
 
-  <h4>Son' foods</h4>
-  <button (click)="son.eat('rice')" >Eat</button>
-</div>
+  <button (click)="eatRice.eat('rice')">Eat</button> <br>
+  <button (click)="drink()">Drink</button> <br>
 
+  <!-- tham chiếu tới nameEx nên input sẽ nhận value = 'Anchovy' -->
+  <input class="input-one" type="text" #nameEx>
+</div>

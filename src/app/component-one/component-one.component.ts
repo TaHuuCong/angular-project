@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { ComponentFourComponent } from '../component-four/component-four.component';
 
 @Component({
   selector: 'app-component-one',
@@ -6,7 +7,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./component-one.component.scss'],
   encapsulation: ViewEncapsulation.Emulated
 })
-export class ComponentOneComponent implements OnInit {
+export class ComponentOneComponent implements OnInit, AfterViewInit {
 
   isLargerThanFive: number = 10;
   soThuNhat: number = 5;
@@ -32,6 +33,9 @@ export class ComponentOneComponent implements OnInit {
     }
   ];
 
+  @ViewChild('nameEx') nameIn: ElementRef;
+  @ViewChild(ComponentFourComponent) viewChild: ComponentFourComponent;
+
   constructor() { }
 
   ngOnInit() {
@@ -44,6 +48,14 @@ export class ComponentOneComponent implements OnInit {
   getStatusOfCheck(value) {
     this.checked = value;
     // console.log(this.checked);
+  }
+
+  ngAfterViewInit() {
+    this.nameIn.nativeElement.value = "Anchovy!";
+  }
+
+  drink() {
+    this.viewChild.eat('water');
   }
 
 }

@@ -45,9 +45,10 @@ export class ComponentFourComponent implements OnInit {
   // checked là thuộc tính của input nên nó mới có giá trị trong $event.target.checked
   emitIsShow(event) {
     this.isShow.emit(event.target.checked);
-    console.log(event.target.checked);
+    // console.log(event.target.checked);
   }
 
+  // khi component cha sử dụng template variable (#) thì có thể sử dụng các public properties/ methods của component con
   eat(food: string) {
     this.foods.push(food);
   }
